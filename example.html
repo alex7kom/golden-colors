@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>golden-colors.js</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h1>golden-colors.js</h1>
+
+      <p>Random color generation for JavaScript and Node.js based on <a href="http://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/">How To Generate Random Colors Programmatically</a> by <strong>Martin Ankerl</strong>. Colors generated using Golden ratio conjugate can be used as background colors for easily readable labels, buttons, etc.</p>
+
+      <p><a href="https://github.com/Alex7Kom/golden-colors">golden-colors.js on Github</a></p>
+
+      <h2>Installation</h2>
+
+      <p>For browser just <a href="https://github.com/Alex7Kom/golden-colors/archive/master.zip">download zip</a> and include <code>golden-colors.js</code> or <code>golden-colors.min.js</code> in your HTML.</p>
+
+      <p>Or you can download using Bower:</p>
+
+      <p>
+        <pre><code class="bash">bower install golden-colors</code></pre>
+      </p>
+
+      <p>For Node.js:</p>
+
+      <p>
+        <pre><code class="bash">npm install golden-colors</code></pre>
+      </p>
+
+      <p>and require it in your code:</p>
+
+      <p>
+        <pre><code class="javascript">var goldenColors = require('golden-colors');</code></pre>
+      </p>
+
+      <h2>Usage</h2>
+
+      <h3>GoldenColors</h3>
+
+      <p>There are three methods for color generation. All three methods return an instance of <a href="#webcolor">WebColor</a>.</p>
+
+      <p><strong>getNaive()</strong></p>
+
+      <p>Just random values for R, G, B.</p>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getNaive()</code></pre>
+      </p>
+
+      <div class="progress" id="naive_bar"></div>
+
+      <p><strong>getHsvSimple(s, v)</strong></p>
+
+      <p>Random color in <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSV</a> system with random values for hue with specified saturation and value.</p>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvSimple(0.5, 0.95)</code></pre>
+      </p>
+      
+      <div class="progress" id="simple_bar"></div>
+
+      <p><strong>getHsvGolden(s, v)</strong></p>
+
+      <p>Random color in <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSV</a> system with random values for hue normalized using <a href="https://en.wikipedia.org/wiki/Golden_ratio#Golden_ratio_conjugate">Golden ratio conjugate</a> with specified saturation and value.</p>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.5, 0.95)</code></pre>
+      </p>
+      
+      <div class="progress" id="golden_bar_5_95"></div>
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.99, 0.99)</code></pre>
+      </p>
+      
+      <div class="progress" id="golden_bar_99_99"></div>
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.25, 0.8)</code></pre>
+      </p>
+      
+      <div class="progress" id="golden_bar_25_8"></div>
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.3, 0.99)</code></pre>
+      </p>
+      
+      <div class="progress" id="golden_bar_3_99"></div>
+
+      <h3 name="webcolor">WebColor</h3>
+
+      <p>An object with R, G, and B values that can be converted into CSS2-compatible string.</p>
+
+      <p><strong>toRgb()</strong></p>
+
+      <p>Returns an Array of <code>[r, g, b]</code> with decimal values.</p>
+      <p>
+        <pre><code class="javascript">[255, 255, 255]</code></pre>
+      </p>
+
+      <p><strong>toRgbString()</strong></p>
+
+      <p>Returns a String of <code>rgb(r, g, b)</code> with decimal values.</p>
+      <p>
+        <pre><code class="javascript">rgb(255, 255, 255)</code></pre>
+      </p>
+
+      <p><strong>toHexString()</strong></p>
+      <p><strong>toString()</strong></p>
+      <p><strong>toJSON()</strong></p>
+
+      <p>Returns a String of <code>#rgb</code> with hexadecimal values.</p>
+      <p>
+        <pre><code class="javascript">#ffffff</code></pre>
+      </p>
+
+      <h2>License</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2014 Alexey Komarov &lt;alex7kom@gmail.com&gt;</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+<script type="text/javascript" src="golden-colors.js"></script>
+<script type="text/javascript">
+  
+(function() {
+  var abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  var stripWidth = 100 / abc.length;
+
+  function createColorStrip (color, width, letter) {
+    var elem = document.createElement('div');
+    elem.className = 'progress-bar';
+    elem.style.cssText = 'width: ' + width + '%; color: #000; background-color: ' + color;
+    console.log(color);
+    console.log(letter);
+    elem.innerText = letter;
+    return elem;
+  }
+
+  abc.forEach(function(letter) {
+    naive_bar.appendChild(createColorStrip(goldenColors.getNaive(), stripWidth, letter));
+    simple_bar.appendChild(createColorStrip(goldenColors.getHsvSimple(0.5, 0.95), stripWidth, letter));
+    golden_bar_5_95.appendChild(createColorStrip(goldenColors.getHsvGolden(0.5, 0.95), stripWidth, letter));
+    golden_bar_99_99.appendChild(createColorStrip(goldenColors.getHsvGolden(0.99, 0.99), stripWidth, letter));
+    golden_bar_25_8.appendChild(createColorStrip(goldenColors.getHsvGolden(0.25, 0.8), stripWidth, letter));
+    golden_bar_3_99.appendChild(createColorStrip(goldenColors.getHsvGolden(0.3, 0.99), stripWidth, letter));
+  });
+})();
+  
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

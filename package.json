@@ -1,0 +1,16 @@
+{
+  "name": "golden-colors",
+  "version": "1.0.0",
+  "description": "Generate random colors using Golden ratio conjugate",
+  "main": "golden-colors.js",
+  "keywords": [
+    "random",
+    "color"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alex7Kom/golden-colors.git"
+  },
+  "author": "Alexey Komarov <alex7kom@gmail.com>",
+  "license": "MIT"
+}
