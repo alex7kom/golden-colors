@@ -1,5 +1,6 @@
 /*
 * golden-colors.js
+* Version 1.0.1
 * Generate random colors using Golden ratio conjugate
 * Based on http://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/
 * MIT License
@@ -37,7 +38,7 @@
       case 4: r = t; g = p; b = v; break;
       case 5: r = v; g = p; b = q; break;
     }
-    console.log(r, g, b);
+
     return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
   }
 
