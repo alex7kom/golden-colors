@@ -1,6 +1,6 @@
 {
   "name": "golden-colors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate random colors using Golden ratio conjugate",
   "main": "golden-colors.js",
   "keywords": [
