@@ -1,6 +1,6 @@
 /*
 * golden-colors.js
-* Version 1.0.1
+* Version 1.0.2
 * Generate random colors using Golden ratio conjugate
 * Based on http://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/
 * MIT License
