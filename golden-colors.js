@@ -92,9 +92,9 @@
     return new WebColor(color[0], color[1], color[2]);
   };
 
-  if (typeof window !== 'undefined') {
-    window.goldenColors = new GoldenColors();
-  } else if (typeof module !== 'undefined') {
+  if (typeof module !== 'undefined') {
     module.exports = new GoldenColors();
+  } else if (typeof window !== 'undefined') {
+    window.goldenColors = new GoldenColors();
   }
 })();
