@@ -12,5 +12,8 @@
     "url": "https://github.com/Alex7Kom/golden-colors.git"
   },
   "author": "Alexey Komarov <alex7kom@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "minify": "uglifyjs golden-colors.js --compress --mangle --comments '/Copyright/' > golden-colors.min.js"
+  }
 }
