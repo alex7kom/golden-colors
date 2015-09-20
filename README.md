@@ -4,19 +4,13 @@ Random color generation for JavaScript and Node.js based on [How To Generate Ran
 
 ## Installation
 
-For browser just download zip and include `golden-colors.js` or `golden-colors.min.js` in your HTML.
-
-Or you can download using Bower:
-
-```
-bower install golden-colors
-```
-
-For Node.js:
+Download [the latest version](https://github.com/Alex7Kom/golden-colors/releases/latest) from Github or use npm or Bower:
 
 ```
 npm install golden-colors
 ```
+
+Then just include `dist/golden-colors.js` or `dist/golden-colors.min.js` in your html. AMD-version of the library that also supports Browserify also available as `dist/golden-colors-amd.js`/`dist/golden-colors-amd.min.js`.
 
 and require it in your code:
 
