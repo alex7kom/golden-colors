@@ -2,7 +2,7 @@
   "name": "golden-colors",
   "version": "1.0.2",
   "description": "Generate random colors using Golden ratio conjugate",
-  "main": "golden-colors.js",
+  "main": "dist/golden-colors-amd.js",
   "keywords": [
     "random",
     "color"
@@ -12,8 +12,16 @@
     "url": "https://github.com/Alex7Kom/golden-colors.git"
   },
   "author": "Alexey Komarov <alex7kom@gmail.com>",
+  "homepage": "https://alex7kom.github.io/golden-colors",
   "license": "MIT",
-  "scripts": {
-    "minify": "uglifyjs golden-colors.js --compress --mangle --comments '/Copyright/' > golden-colors.min.js"
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-clone": "^1.0.0",
+    "gulp-concat-extra": "^0.1.0",
+    "gulp-header": "^1.7.1",
+    "gulp-markdown": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.1",
+    "gulp-umd": "^0.2.0"
   }
 }

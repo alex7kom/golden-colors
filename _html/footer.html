@@ -1,0 +1,75 @@
+      <h2 id="examples">Examples</h2>
+
+      <p><strong>getHsvGolden(s, v)</strong></p>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.5, 0.95)</code></pre>
+      </p>
+      <div class="progress" id="golden_bar_5_95"></div>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.99, 0.99)</code></pre>
+      </p>
+      <div class="progress" id="golden_bar_99_99"></div>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.25, 0.8)</code></pre>
+      </p>
+      <div class="progress" id="golden_bar_25_8"></div>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.3, 0.99)</code></pre>
+      </p>
+      <div class="progress" id="golden_bar_3_99"></div>
+
+      <p><strong>getHsvSimple(s, v)</strong></p>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvSimple(0.5, 0.95)</code></pre>
+      </p>
+      <div class="progress" id="simple_bar"></div>
+
+      <p><strong>getNaive()</strong></p>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getNaive()</code></pre>
+      </p>
+      <div class="progress" id="naive_bar"></div>
+
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+<script type="text/javascript" src="dist/golden-colors-amd.js"></script>
+<script type="text/javascript">
+
+(function() {
+  var abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  var stripWidth = 100 / abc.length;
+
+  function createColorStrip (color, width, letter) {
+    var elem = document.createElement('div');
+    elem.className = 'progress-bar';
+    elem.style.cssText = 'width: ' + width + '%; color: #000; background-color: ' + color;
+    console.log(color);
+    console.log(letter);
+    elem.innerText = letter;
+    return elem;
+  }
+
+  abc.forEach(function(letter) {
+    naive_bar.appendChild(createColorStrip(goldenColors.getNaive(), stripWidth, letter));
+    simple_bar.appendChild(createColorStrip(goldenColors.getHsvSimple(0.5, 0.95), stripWidth, letter));
+    golden_bar_5_95.appendChild(createColorStrip(goldenColors.getHsvGolden(0.5, 0.95), stripWidth, letter));
+    golden_bar_99_99.appendChild(createColorStrip(goldenColors.getHsvGolden(0.99, 0.99), stripWidth, letter));
+    golden_bar_25_8.appendChild(createColorStrip(goldenColors.getHsvGolden(0.25, 0.8), stripWidth, letter));
+    golden_bar_3_99.appendChild(createColorStrip(goldenColors.getHsvGolden(0.3, 0.99), stripWidth, letter));
+  });
+})();
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

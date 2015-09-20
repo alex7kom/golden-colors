@@ -1,3 +1,10 @@
+/**
+ * golden-colors - Generate random colors using Golden ratio conjugate
+ * @version v1.0.2
+ * @author Alexey Komarov <alex7kom@gmail.com>
+ * @link https://alex7kom.github.io/golden-colors
+ * @license MIT
+ */
 var goldenColors = {};
 
 (function () {

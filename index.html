@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>golden-colors</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <style type="text/css">
+  h1 {
+    margin-top: 10px;
+  }
+  .buttons-block {
+    margin-top: 20px;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="buttons-block">
+        <a class="btn btn-default btn-xs" href="https://github.com/Alex7Kom/golden-colors" role="button">View on Github</a>
+        <a class="btn btn-danger btn-xs" href="https://www.npmjs.com/package/golden-colors" role="button">View on npm</a>
+      </div>
+
+<h1 id="golden-colors">golden-colors</h1>
+<p>Random color generation for JavaScript and Node.js based on <a href="http://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/">How To Generate Random Colors Programmatically</a> by <strong>Martin Ankerl</strong>. Colors generated using Golden ratio conjugate can be used as background colors for easily readable labels, buttons, etc.</p>
+<h2 id="installation">Installation</h2>
+<p>For browser just download zip and include <code>golden-colors.js</code> or <code>golden-colors.min.js</code> in your HTML.</p>
+<p>Or you can download using Bower:</p>
+<pre><code>bower install golden-colors
+</code></pre><p>For Node.js:</p>
+<pre><code>npm install golden-colors
+</code></pre><p>and require it in your code:</p>
+<pre><code class="lang-js">var goldenColors = require(&#39;golden-colors&#39;);
+</code></pre>
+<h2 id="api">API</h2>
+<h3 id="goldencolors">goldenColors</h3>
+<p>There are three functions for color generation. All three functions return an instance of <a href="#webcolor">WebColor</a>.</p>
+<h4 id="gethsvgolden-s-v-">getHsvGolden(s, v)</h4>
+<p>Random color in <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSV</a> system with random values for hue normalized using <a href="https://en.wikipedia.org/wiki/Golden_ratio#Golden_ratio_conjugate">Golden ratio conjugate</a> with specified saturation and value.</p>
+<h4 id="gethsvsimple-s-v-">getHsvSimple(s, v)</h4>
+<p>Random color in <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSV</a> system with random values for hue with specified saturation and value.</p>
+<h4 id="getnaive-">getNaive()</h4>
+<p>Just random values for R, G, B.</p>
+<h3 id="webcolor">WebColor</h3>
+<p>An object with R, G, and B values that can be converted into CSS2-compatible string.</p>
+<h4 id="torgb-">toRgb()</h4>
+<p>Returns an Array of <code>[r, g, b]</code> with decimal values.</p>
+<h4 id="torgbstring-">toRgbString()</h4>
+<p>Returns a String of <code>rgb(r, g, b)</code> with decimal values.</p>
+<h4 id="tohexstring-">toHexString()</h4>
+<h4 id="tostring-">toString()</h4>
+<h4 id="tojson-">toJSON()</h4>
+<p>Returns a String of <code>#rgb</code> with hexadecimal values.</p>
+<h2 id="license">License</h2>
+<p>The MIT License (MIT)</p>
+<p>Copyright (c) 2014-2015 Alexey Komarov <a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#97;&#x6c;&#101;&#120;&#55;&#x6b;&#x6f;&#x6d;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#109;">&#97;&#x6c;&#101;&#120;&#55;&#x6b;&#x6f;&#x6d;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a></p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the &quot;Software&quot;), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+      <h2 id="examples">Examples</h2>
+
+      <p><strong>getHsvGolden(s, v)</strong></p>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.5, 0.95)</code></pre>
+      </p>
+      <div class="progress" id="golden_bar_5_95"></div>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.99, 0.99)</code></pre>
+      </p>
+      <div class="progress" id="golden_bar_99_99"></div>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.25, 0.8)</code></pre>
+      </p>
+      <div class="progress" id="golden_bar_25_8"></div>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvGolden(0.3, 0.99)</code></pre>
+      </p>
+      <div class="progress" id="golden_bar_3_99"></div>
+
+      <p><strong>getHsvSimple(s, v)</strong></p>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getHsvSimple(0.5, 0.95)</code></pre>
+      </p>
+      <div class="progress" id="simple_bar"></div>
+
+      <p><strong>getNaive()</strong></p>
+
+      <p>
+        <pre><code class="javascript">goldenColors.getNaive()</code></pre>
+      </p>
+      <div class="progress" id="naive_bar"></div>
+
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+<script type="text/javascript" src="dist/golden-colors-amd.js"></script>
+<script type="text/javascript">
+
+(function() {
+  var abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  var stripWidth = 100 / abc.length;
+
+  function createColorStrip (color, width, letter) {
+    var elem = document.createElement('div');
+    elem.className = 'progress-bar';
+    elem.style.cssText = 'width: ' + width + '%; color: #000; background-color: ' + color;
+    console.log(color);
+    console.log(letter);
+    elem.innerText = letter;
+    return elem;
+  }
+
+  abc.forEach(function(letter) {
+    naive_bar.appendChild(createColorStrip(goldenColors.getNaive(), stripWidth, letter));
+    simple_bar.appendChild(createColorStrip(goldenColors.getHsvSimple(0.5, 0.95), stripWidth, letter));
+    golden_bar_5_95.appendChild(createColorStrip(goldenColors.getHsvGolden(0.5, 0.95), stripWidth, letter));
+    golden_bar_99_99.appendChild(createColorStrip(goldenColors.getHsvGolden(0.99, 0.99), stripWidth, letter));
+    golden_bar_25_8.appendChild(createColorStrip(goldenColors.getHsvGolden(0.25, 0.8), stripWidth, letter));
+    golden_bar_3_99.appendChild(createColorStrip(goldenColors.getHsvGolden(0.3, 0.99), stripWidth, letter));
+  });
+})();
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -5,8 +5,9 @@
     "Alexey Komarov <alex7kom@gmail.com>"
   ],
   "description": "Generate random colors using Golden ratio conjugate",
-  "main": "golden-colors.js",
+  "main": "dist/golden-colors-amd.min.js",
   "moduleType": [
+    "amd",
     "globals",
     "node"
   ],
