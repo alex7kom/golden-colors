@@ -81,4 +81,12 @@ var goldenColors = {};
     var color = convertHsvToRgb(h, s, v);
     return new WebColor(color[0], color[1], color[2]);
   };
+    
+  var hFixed = Math.random();
+  goldenColors.getHsvGoldenDistributed = function (s, v) {
+    hFixed += goldenRatioConjugate;
+    hFixed %= 1;
+    var color = convertHsvToRgb(hFixed s, v);
+    return new WebColor(color[0], color[1], color[2]);
+  };
 })();
