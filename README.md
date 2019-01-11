@@ -32,6 +32,10 @@ Random color in [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) system with ran
 
 Random color in [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) system with random values for hue with specified saturation and value.
 
+#### getHsvGoldenDistributed(s, v)
+
+Random initial color in [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) with specified saturation and value followed by a better distribution of colors.
+
 #### getNaive()
 
 Just random values for R, G, B.
