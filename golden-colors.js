@@ -74,8 +74,8 @@ var goldenColors = {};
     return new WebColor(color[0], color[1], color[2]);
   };
 
+  var h = Math.random();
   goldenColors.getHsvGolden = function (s, v) {
-    var h = Math.random();
     h += goldenRatioConjugate;
     h %= 1;
     var color = convertHsvToRgb(h, s, v);

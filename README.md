@@ -26,7 +26,7 @@ There are three functions for color generation. All three functions return an in
 
 #### getHsvGolden(s, v)
 
-Random color in [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) system with random values for hue normalized using [Golden ratio conjugate](https://en.wikipedia.org/wiki/Golden_ratio#Golden_ratio_conjugate) with specified saturation and value.
+Random color in [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) system with random value for hue set at startup and distributed using [Golden ratio conjugate](https://en.wikipedia.org/wiki/Golden_ratio#Golden_ratio_conjugate) with specified saturation and value.
 
 #### getHsvSimple(s, v)
 

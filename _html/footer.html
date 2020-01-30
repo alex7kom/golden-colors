@@ -60,9 +60,17 @@
   abc.forEach(function(letter) {
     naive_bar.appendChild(createColorStrip(goldenColors.getNaive(), stripWidth, letter));
     simple_bar.appendChild(createColorStrip(goldenColors.getHsvSimple(0.5, 0.95), stripWidth, letter));
-    golden_bar_5_95.appendChild(createColorStrip(goldenColors.getHsvGolden(0.5, 0.95), stripWidth, letter));
+  });
+  abc.forEach(function(letter) {
     golden_bar_99_99.appendChild(createColorStrip(goldenColors.getHsvGolden(0.99, 0.99), stripWidth, letter));
+  });
+  abc.forEach(function(letter) {
     golden_bar_25_8.appendChild(createColorStrip(goldenColors.getHsvGolden(0.25, 0.8), stripWidth, letter));
+  });
+  abc.forEach(function(letter) {
+    golden_bar_5_95.appendChild(createColorStrip(goldenColors.getHsvGolden(0.5, 0.95), stripWidth, letter));
+  });
+  abc.forEach(function(letter) {
     golden_bar_3_99.appendChild(createColorStrip(goldenColors.getHsvGolden(0.3, 0.99), stripWidth, letter));
   });
 })();

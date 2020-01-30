@@ -36,7 +36,7 @@
 <h3 id="goldencolors">goldenColors</h3>
 <p>There are three functions for color generation. All three functions return an instance of <a href="#webcolor">WebColor</a>.</p>
 <h4 id="gethsvgolden-s-v-">getHsvGolden(s, v)</h4>
-<p>Random color in <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSV</a> system with random values for hue normalized using <a href="https://en.wikipedia.org/wiki/Golden_ratio#Golden_ratio_conjugate">Golden ratio conjugate</a> with specified saturation and value.</p>
+<p>Random color in <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSV</a> system with random value for hue set at startup and distributed using <a href="https://en.wikipedia.org/wiki/Golden_ratio#Golden_ratio_conjugate">Golden ratio conjugate</a> with specified saturation and value.</p>
 <h4 id="gethsvsimple-s-v-">getHsvSimple(s, v)</h4>
 <p>Random color in <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSV</a> system with random values for hue with specified saturation and value.</p>
 <h4 id="getnaive-">getNaive()</h4>
@@ -53,7 +53,7 @@
 <p>Returns a String of <code>#rgb</code> with hexadecimal values.</p>
 <h2 id="license">License</h2>
 <p>The MIT License (MIT)</p>
-<p>Copyright (c) 2014-2015 Alexey Komarov <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#97;&#108;&#101;&#x78;&#x37;&#107;&#111;&#109;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;">&#97;&#108;&#101;&#x78;&#x37;&#107;&#111;&#109;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;</a></p>
+<p>Copyright (c) 2014-2015 Alexey Komarov <a href="mailto:&#x61;&#108;&#x65;&#120;&#x37;&#x6b;&#111;&#x6d;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#x61;&#108;&#x65;&#120;&#x37;&#x6b;&#111;&#x6d;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;</a></p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the &quot;Software&quot;), to deal in
 the Software without restriction, including without limitation the rights to
@@ -131,9 +131,17 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
   abc.forEach(function(letter) {
     naive_bar.appendChild(createColorStrip(goldenColors.getNaive(), stripWidth, letter));
     simple_bar.appendChild(createColorStrip(goldenColors.getHsvSimple(0.5, 0.95), stripWidth, letter));
-    golden_bar_5_95.appendChild(createColorStrip(goldenColors.getHsvGolden(0.5, 0.95), stripWidth, letter));
+  });
+  abc.forEach(function(letter) {
     golden_bar_99_99.appendChild(createColorStrip(goldenColors.getHsvGolden(0.99, 0.99), stripWidth, letter));
+  });
+  abc.forEach(function(letter) {
     golden_bar_25_8.appendChild(createColorStrip(goldenColors.getHsvGolden(0.25, 0.8), stripWidth, letter));
+  });
+  abc.forEach(function(letter) {
+    golden_bar_5_95.appendChild(createColorStrip(goldenColors.getHsvGolden(0.5, 0.95), stripWidth, letter));
+  });
+  abc.forEach(function(letter) {
     golden_bar_3_99.appendChild(createColorStrip(goldenColors.getHsvGolden(0.3, 0.99), stripWidth, letter));
   });
 })();
