@@ -3,6 +3,7 @@
   "version": "2.0.1",
   "description": "Generate random colors using Golden ratio conjugate",
   "main": "dist/golden-colors-amd.js",
+  "types": "index.d.ts",
   "keywords": [
     "random",
     "color"
