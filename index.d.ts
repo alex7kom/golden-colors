@@ -3,15 +3,9 @@ declare module 'golden-colors' {
 
   export function getHsvSimple(s: number, v: number): WebColor;
 
-  export function getNaive(): any;
+  export function getNaive(): WebColor;
 
   export interface WebColor {
-    r: number;
-    g: number;
-    b: number;
-
-    new(r: number, g: number, b: number): WebColor;
-
     toRgb(): [number, number, number];
 
     toRgbString(): string;
