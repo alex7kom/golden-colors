@@ -1,4 +1,6 @@
-# golden-colors
+**This package is deprecated.** Since [HSL is widely supported](https://caniuse.com/?search=hsl) now, please consider using [golden-number](https://github.com/alex7kom/golden-number) which is more lightweight and versatile.
+
+# golden-colors 
 
 Random color generation for JavaScript and Node.js based on [How To Generate Random Colors Programmatically](http://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/) by __Martin Ankerl__. Colors generated using Golden ratio conjugate can be used as background colors for easily readable labels, buttons, etc.
 
