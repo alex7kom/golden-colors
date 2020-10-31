@@ -1,6 +1,6 @@
 {
   "name": "golden-colors",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Generate random colors using Golden ratio conjugate",
   "main": "dist/golden-colors-amd.js",
   "types": "index.d.ts",
